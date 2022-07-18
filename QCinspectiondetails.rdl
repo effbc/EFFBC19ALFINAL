@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="filter_Control1102154058">
+          <DataField>filter_Control1102154058</DataField>
+        </Field>
+        <Field Name="Item_NameCaption_Control1102154045">
+          <DataField>Item_NameCaption_Control1102154045</DataField>
+        </Field>
+        <Field Name="Inspection_personCaption_Control1102154046">
+          <DataField>Inspection_personCaption_Control1102154046</DataField>
+        </Field>
+        <Field Name="Total_QtyCaption_Control1102154047">
+          <DataField>Total_QtyCaption_Control1102154047</DataField>
+        </Field>
+        <Field Name="Qty_AcceptedCaption_Control1102154048">
+          <DataField>Qty_AcceptedCaption_Control1102154048</DataField>
+        </Field>
+        <Field Name="Qty_RejectedCaption_Control1102154049">
+          <DataField>Qty_RejectedCaption_Control1102154049</DataField>
+        </Field>
+        <Field Name="Lot_No_Caption_Control1102154050">
+          <DataField>Lot_No_Caption_Control1102154050</DataField>
+        </Field>
+        <Field Name="Time_takenCaption_Control1102154051">
+          <DataField>Time_takenCaption_Control1102154051</DataField>
+        </Field>
+        <Field Name="DaysCaption_Control1102154055">
+          <DataField>DaysCaption_Control1102154055</DataField>
+        </Field>
+        <Field Name="HoursCaption_Control1102154056">
+          <DataField>HoursCaption_Control1102154056</DataField>
+        </Field>
+        <Field Name="Inward_DateCaption_Control1102154064">
+          <DataField>Inward_DateCaption_Control1102154064</DataField>
+        </Field>
+        <Field Name="Location_Code_Caption_Control1102154037">
+          <DataField>Location_Code_Caption_Control1102154037</DataField>
+        </Field>
+        <Field Name="SNO_Caption_Control1102154104">
+          <DataField>SNO_Caption_Control1102154104</DataField>
+        </Field>
+        <Field Name="UOMCaption_Control1102154109">
+          <DataField>UOMCaption_Control1102154109</DataField>
+        </Field>
+        <Field Name="Posting_DateCaption_Control1102154071">
+          <DataField>Posting_DateCaption_Control1102154071</DataField>
+        </Field>
+        <Field Name="Reason_for_pendingCaption_Control1102154152">
+          <DataField>Reason_for_pendingCaption_Control1102154152</DataField>
+        </Field>
+        <Field Name="filter_Control1102154072">
+          <DataField>filter_Control1102154072</DataField>
+        </Field>
+        <Field Name="Qty_RejectedCaption_Control1102154052">
+          <DataField>Qty_RejectedCaption_Control1102154052</DataField>
+        </Field>
+        <Field Name="Item_NameCaption_Control1102154053">
+          <DataField>Item_NameCaption_Control1102154053</DataField>
+        </Field>
+        <Field Name="Inspection_personCaption_Control1102154060">
+          <DataField>Inspection_personCaption_Control1102154060</DataField>
+        </Field>
+        <Field Name="Total_QtyCaption_Control1102154063">
+          <DataField>Total_QtyCaption_Control1102154063</DataField>
+        </Field>
+        <Field Name="Qty_AcceptedCaption_Control1102154065">
+          <DataField>Qty_AcceptedCaption_Control1102154065</DataField>
+        </Field>
+        <Field Name="Lot_No_Caption_Control1102154066">
+          <DataField>Lot_No_Caption_Control1102154066</DataField>
+        </Field>
+        <Field Name="Time_takenCaption_Control1102154067">
+          <DataField>Time_takenCaption_Control1102154067</DataField>
+        </Field>
+        <Field Name="DaysCaption_Control1102154069">
+          <DataField>DaysCaption_Control1102154069</DataField>
+        </Field>
+        <Field Name="HoursCaption_Control1102154070">
+          <DataField>HoursCaption_Control1102154070</DataField>
+        </Field>
+        <Field Name="Inward_DateCaption_Control1102154074">
+          <DataField>Inward_DateCaption_Control1102154074</DataField>
+        </Field>
+        <Field Name="Location_Code_Caption_Control1102154075">
+          <DataField>Location_Code_Caption_Control1102154075</DataField>
+        </Field>
+        <Field Name="SNO_Caption_Control1102154105">
+          <DataField>SNO_Caption_Control1102154105</DataField>
+        </Field>
+        <Field Name="UOMCaption_Control1102154111">
+          <DataField>UOMCaption_Control1102154111</DataField>
+        </Field>
+        <Field Name="Posting_DateCaption_Control1102154057">
+          <DataField>Posting_DateCaption_Control1102154057</DataField>
+        </Field>
+        <Field Name="Reason_for_pendingCaption_Control1102154151">
+          <DataField>Reason_for_pendingCaption_Control1102154151</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="filter">
+          <DataField>filter</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header__Inspection_Receipt_Header___Location_Code_">
+          <DataField>Inspection_Receipt_Header__Inspection_Receipt_Header___Location_Code_</DataField>
+        </Field>
+        <Field Name="Item_NameCaption">
+          <DataField>Item_NameCaption</DataField>
+        </Field>
+        <Field Name="Inspection_personCaption">
+          <DataField>Inspection_personCaption</DataField>
+        </Field>
+        <Field Name="Total_QtyCaption">
+          <DataField>Total_QtyCaption</DataField>
+        </Field>
+        <Field Name="Qty_AcceptedCaption">
+          <DataField>Qty_AcceptedCaption</DataField>
+        </Field>
+        <Field Name="Qty_RejectedCaption">
+          <DataField>Qty_RejectedCaption</DataField>
+        </Field>
+        <Field Name="Lot_No_Caption">
+          <DataField>Lot_No_Caption</DataField>
+        </Field>
+        <Field Name="Time_takenCaption">
+          <DataField>Time_takenCaption</DataField>
+        </Field>
+        <Field Name="Inwards_ClearanceCaption">
+          <DataField>Inwards_ClearanceCaption</DataField>
+        </Field>
+        <Field Name="DaysCaption">
+          <DataField>DaysCaption</DataField>
+        </Field>
+        <Field Name="HoursCaption">
+          <DataField>HoursCaption</DataField>
+        </Field>
+        <Field Name="Posting_DateCaption">
+          <DataField>Posting_DateCaption</DataField>
+        </Field>
+        <Field Name="Inward_DateCaption">
+          <DataField>Inward_DateCaption</DataField>
+        </Field>
+        <Field Name="Location_Code_Caption">
+          <DataField>Location_Code_Caption</DataField>
+        </Field>
+        <Field Name="SNO_Caption">
+          <DataField>SNO_Caption</DataField>
+        </Field>
+        <Field Name="UOMCaption">
+          <DataField>UOMCaption</DataField>
+        </Field>
+        <Field Name="Reason_for_pendingCaption">
+          <DataField>Reason_for_pendingCaption</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header_No_">
+          <DataField>Inspection_Receipt_Header_No_</DataField>
+        </Field>
+        <Field Name="PIDSBody1">
+          <DataField>PIDSBody1</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Item_Description_">
+          <DataField>Inspection_Receipt_Header___Item_Description_</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader__Time_Taken_">
+          <DataField>Posted_Inspect_DatasheetHeader__Time_Taken_</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader__Time_Taken_Format">
+          <DataField>Posted_Inspect_DatasheetHeader__Time_Taken_Format</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader__Lot_No__">
+          <DataField>Posted_Inspect_DatasheetHeader__Lot_No__</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Qty__Rejected_">
+          <DataField>Inspection_Receipt_Header___Qty__Rejected_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Qty__Rejected_Format">
+          <DataField>Inspection_Receipt_Header___Qty__Rejected_Format</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Qty__Accepted_">
+          <DataField>Inspection_Receipt_Header___Qty__Accepted_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Qty__Accepted_Format">
+          <DataField>Inspection_Receipt_Header___Qty__Accepted_Format</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header__Quantity">
+          <DataField>Inspection_Receipt_Header__Quantity</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header__QuantityFormat">
+          <DataField>Inspection_Receipt_Header__QuantityFormat</DataField>
+        </Field>
+        <Field Name="name">
+          <DataField>name</DataField>
+        </Field>
+        <Field Name="day">
+          <DataField>day</DataField>
+        </Field>
+        <Field Name="hour">
+          <DataField>hour</DataField>
+        </Field>
+        <Field Name="hourFormat">
+          <DataField>hourFormat</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Posted_Date_">
+          <DataField>Inspection_Receipt_Header___Posted_Date_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___IDS_creation_Date_">
+          <DataField>Inspection_Receipt_Header___IDS_creation_Date_</DataField>
+        </Field>
+        <Field Name="no">
+          <DataField>no</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header___Unit_Of_Measure_Code_">
+          <DataField>Inspection_Receipt_Header___Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader___Reason_for_Pending_">
+          <DataField>Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader___Reason_for_Pending_</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader_No_">
+          <DataField>Posted_Inspect_DatasheetHeader_No_</DataField>
+        </Field>
+        <Field Name="Tim1">
+          <DataField>Tim1</DataField>
+        </Field>
+        <Field Name="Tim2">
+          <DataField>Tim2</DataField>
+        </Field>
+        <Field Name="Posted_Inspect_DatasheetHeader_Inspection_Receipt_No_">
+          <DataField>Posted_Inspect_DatasheetHeader_Inspection_Receipt_No_</DataField>
+        </Field>
+        <Field Name="IDSBody1">
+          <DataField>IDSBody1</DataField>
+        </Field>
+        <Field Name="IDS_IDS__Item_Description_">
+          <DataField>IDS_IDS__Item_Description_</DataField>
+        </Field>
+        <Field Name="IDS__Lot_No__">
+          <DataField>IDS__Lot_No__</DataField>
+        </Field>
+        <Field Name="IDS_IDS_Quantity">
+          <DataField>IDS_IDS_Quantity</DataField>
+        </Field>
+        <Field Name="IDS_IDS_QuantityFormat">
+          <DataField>IDS_IDS_QuantityFormat</DataField>
+        </Field>
+        <Field Name="name_Control1102154123">
+          <DataField>name_Control1102154123</DataField>
+        </Field>
+        <Field Name="day_Control1102154124">
+          <DataField>day_Control1102154124</DataField>
+        </Field>
+        <Field Name="hour_Control1102154125">
+          <DataField>hour_Control1102154125</DataField>
+        </Field>
+        <Field Name="hour_Control1102154125Format">
+          <DataField>hour_Control1102154125Format</DataField>
+        </Field>
+        <Field Name="IDS_IDS__Created_Date_">
+          <DataField>IDS_IDS__Created_Date_</DataField>
+        </Field>
+        <Field Name="no_Control1102154128">
+          <DataField>no_Control1102154128</DataField>
+        </Field>
+        <Field Name="IDS_IDS__Unit_Of_Measure_Code_">
+          <DataField>IDS_IDS__Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="IDS_No_">
+          <DataField>IDS_No_</DataField>
+        </Field>
+        <Field Name="Int1Header">
+          <DataField>Int1Header</DataField>
+        </Field>
+        <Field Name="avg">
+          <DataField>avg</DataField>
+        </Field>
+        <Field Name="avgFormat">
+          <DataField>avgFormat</DataField>
+        </Field>
+        <Field Name="TextVar">
+          <DataField>TextVar</DataField>
+        </Field>
+        <Field Name="TextVarFormat">
+          <DataField>TextVarFormat</DataField>
+        </Field>
+        <Field Name="avg1">
+          <DataField>avg1</DataField>
+        </Field>
+        <Field Name="avg1Format">
+          <DataField>avg1Format</DataField>
+        </Field>
+        <Field Name="total">
+          <DataField>total</DataField>
+        </Field>
+        <Field Name="totalFormat">
+          <DataField>totalFormat</DataField>
+        </Field>
+        <Field Name="Average_Days_Caption">
+          <DataField>Average_Days_Caption</DataField>
+        </Field>
+        <Field Name="int1_Number">
+          <DataField>int1_Number</DataField>
+        </Field>
+        <Field Name="IR_IR__Location_Code_">
+          <DataField>IR_IR__Location_Code_</DataField>
+        </Field>
+        <Field Name="IRItemDescription_">
+          <DataField>IRItemDescription_</DataField>
+        </Field>
+        <Field Name="IRQuantity_">
+          <DataField>IRQuantity_</DataField>
+        </Field>
+        <Field Name="IRQuantity_Format">
+          <DataField>IRQuantity_Format</DataField>
+        </Field>
+        <Field Name="IRQtyAccepted_">
+          <DataField>IRQtyAccepted_</DataField>
+        </Field>
+        <Field Name="IRQtyAccepted_Format">
+          <DataField>IRQtyAccepted_Format</DataField>
+        </Field>
+        <Field Name="IRQtyRejected_">
+          <DataField>IRQtyRejected_</DataField>
+        </Field>
+        <Field Name="IRQtyRejected_Format">
+          <DataField>IRQtyRejected_Format</DataField>
+        </Field>
+        <Field Name="IRUOM_">
+          <DataField>IRUOM_</DataField>
+        </Field>
+        <Field Name="IRPostedDate_">
+          <DataField>IRPostedDate_</DataField>
+        </Field>
+        <Field Name="IRCreatedDate_">
+          <DataField>IRCreatedDate_</DataField>
+        </Field>
+        <Field Name="IR_No_">
+          <DataField>IR_No_</DataField>
+        </Field>
+        <Field Name="PostedIDSBody1">
+          <DataField>PostedIDSBody1</DataField>
+        </Field>
+        <Field Name="PIDS__Lot_No__">
+          <DataField>PIDS__Lot_No__</DataField>
+        </Field>
+        <Field Name="IR__Qty__Accepted_">
+          <DataField>IR__Qty__Accepted_</DataField>
+        </Field>
+        <Field Name="IR__Qty__Accepted_Format">
+          <DataField>IR__Qty__Accepted_Format</DataField>
+        </Field>
+        <Field Name="name_Control1102154030">
+          <DataField>name_Control1102154030</DataField>
+        </Field>
+        <Field Name="IR__Item_Description_">
+          <DataField>IR__Item_Description_</DataField>
+        </Field>
+        <Field Name="PIDS__Time_Taken_">
+          <DataField>PIDS__Time_Taken_</DataField>
+        </Field>
+        <Field Name="PIDS__Time_Taken_Format">
+          <DataField>PIDS__Time_Taken_Format</DataField>
+        </Field>
+        <Field Name="IR_Quantity">
+          <DataField>IR_Quantity</DataField>
+        </Field>
+        <Field Name="IR_QuantityFormat">
+          <DataField>IR_QuantityFormat</DataField>
+        </Field>
+        <Field Name="day_Control1102154034">
+          <DataField>day_Control1102154034</DataField>
+        </Field>
+        <Field Name="hour_Control1102154035">
+          <DataField>hour_Control1102154035</DataField>
+        </Field>
+        <Field Name="hour_Control1102154035Format">
+          <DataField>hour_Control1102154035Format</DataField>
+        </Field>
+        <Field Name="IR__Posted_Date_">
+          <DataField>IR__Posted_Date_</DataField>
+        </Field>
+        <Field Name="IR__IDS_creation_Date_">
+          <DataField>IR__IDS_creation_Date_</DataField>
+        </Field>
+        <Field Name="no_Control1102154099">
+          <DataField>no_Control1102154099</DataField>
+        </Field>
+        <Field Name="IR__Qty__Rejected_">
+          <DataField>IR__Qty__Rejected_</DataField>
+        </Field>
+        <Field Name="IR__Qty__Rejected_Format">
+          <DataField>IR__Qty__Rejected_Format</DataField>
+        </Field>
+        <Field Name="IR__Unit_Of_Measure_Code_">
+          <DataField>IR__Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="PIDS_PIDS__Reason_for_Pending_">
+          <DataField>PIDS_PIDS__Reason_for_Pending_</DataField>
+        </Field>
+        <Field Name="PIDS_No_">
+          <DataField>PIDS_No_</DataField>
+        </Field>
+        <Field Name="PIDSTim1">
+          <DataField>PIDSTim1</DataField>
+        </Field>
+        <Field Name="PIDSTim2">
+          <DataField>PIDSTim2</DataField>
+        </Field>
+        <Field Name="PIDS_Inspection_Receipt_No_">
+          <DataField>PIDS_Inspection_Receipt_No_</DataField>
+        </Field>
+        <Field Name="IDS1Body1">
+          <DataField>IDS1Body1</DataField>
+        </Field>
+        <Field Name="IDS1_IDS1__Unit_Of_Measure_Code_">
+          <DataField>IDS1_IDS1__Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="IDS1_IDS1__Item_Description_">
+          <DataField>IDS1_IDS1__Item_Description_</DataField>
+        </Field>
+        <Field Name="IDS1__Lot_No__">
+          <DataField>IDS1__Lot_No__</DataField>
+        </Field>
+        <Field Name="IDS1_IDS1_Quantity">
+          <DataField>IDS1_IDS1_Quantity</DataField>
+        </Field>
+        <Field Name="IDS1_IDS1_QuantityFormat">
+          <DataField>IDS1_IDS1_QuantityFormat</DataField>
+        </Field>
+        <Field Name="name_Control1102154130">
+          <DataField>name_Control1102154130</DataField>
+        </Field>
+        <Field Name="day_Control1102154131">
+          <DataField>day_Control1102154131</DataField>
+        </Field>
+        <Field Name="hour_Control1102154132">
+          <DataField>hour_Control1102154132</DataField>
+        </Field>
+        <Field Name="hour_Control1102154132Format">
+          <DataField>hour_Control1102154132Format</DataField>
+        </Field>
+        <Field Name="IDS1_IDS1__Created_Date_">
+          <DataField>IDS1_IDS1__Created_Date_</DataField>
+        </Field>
+        <Field Name="no_Control1102154134">
+          <DataField>no_Control1102154134</DataField>
+        </Field>
+        <Field Name="IDS1_No_">
+          <DataField>IDS1_No_</DataField>
+        </Field>
+        <Field Name="Int2Header">
+          <DataField>Int2Header</DataField>
+        </Field>
+        <Field Name="avg2">
+          <DataField>avg2</DataField>
+        </Field>
+        <Field Name="avg2Format">
+          <DataField>avg2Format</DataField>
+        </Field>
+        <Field Name="Average_Days_Caption_Control1102154138">
+          <DataField>Average_Days_Caption_Control1102154138</DataField>
+        </Field>
+        <Field Name="Total1">
+          <DataField>Total1</DataField>
+        </Field>
+        <Field Name="Total1Format">
+          <DataField>Total1Format</DataField>
+        </Field>
+        <Field Name="int2_Number">
+          <DataField>int2_Number</DataField>
+        </Field>
+        <Field Name="IR1_Filter">
+          <DataField>IR1_Filter</DataField>
+        </Field>
+        <Field Name="IR1_IR1__Location_Code_">
+          <DataField>IR1_IR1__Location_Code_</DataField>
+        </Field>
+        <Field Name="IR1_No_">
+          <DataField>IR1_No_</DataField>
+        </Field>
+        <Field Name="PIDS1Body1">
+          <DataField>PIDS1Body1</DataField>
+        </Field>
+        <Field Name="IR1__Item_Description_">
+          <DataField>IR1__Item_Description_</DataField>
+        </Field>
+        <Field Name="IR1__Qty__Rejected_">
+          <DataField>IR1__Qty__Rejected_</DataField>
+        </Field>
+        <Field Name="IR1__Qty__Rejected_Format">
+          <DataField>IR1__Qty__Rejected_Format</DataField>
+        </Field>
+        <Field Name="PIDS1__Lot_No__">
+          <DataField>PIDS1__Lot_No__</DataField>
+        </Field>
+        <Field Name="IR1__Qty__Accepted_">
+          <DataField>IR1__Qty__Accepted_</DataField>
+        </Field>
+        <Field Name="IR1__Qty__Accepted_Format">
+          <DataField>IR1__Qty__Accepted_Format</DataField>
+        </Field>
+        <Field Name="name_Control1102154080">
+          <DataField>name_Control1102154080</DataField>
+        </Field>
+        <Field Name="PIDS1__Time_Taken_">
+          <DataField>PIDS1__Time_Taken_</DataField>
+        </Field>
+        <Field Name="PIDS1__Time_Taken_Format">
+          <DataField>PIDS1__Time_Taken_Format</DataField>
+        </Field>
+        <Field Name="IR1_Quantity">
+          <DataField>IR1_Quantity</DataField>
+        </Field>
+        <Field Name="IR1_QuantityFormat">
+          <DataField>IR1_QuantityFormat</DataField>
+        </Field>
+        <Field Name="day_Control1102154083">
+          <DataField>day_Control1102154083</DataField>
+        </Field>
+        <Field Name="hour_Control1102154084">
+          <DataField>hour_Control1102154084</DataField>
+        </Field>
+        <Field Name="hour_Control1102154084Format">
+          <DataField>hour_Control1102154084Format</DataField>
+        </Field>
+        <Field Name="IR1__Posted_Date_">
+          <DataField>IR1__Posted_Date_</DataField>
+        </Field>
+        <Field Name="IR1__IDS_creation_Date_">
+          <DataField>IR1__IDS_creation_Date_</DataField>
+        </Field>
+        <Field Name="no_Control1102154100">
+          <DataField>no_Control1102154100</DataField>
+        </Field>
+        <Field Name="IR1__Unit_Of_Measure_Code_">
+          <DataField>IR1__Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="PIDS1_PIDS1__Reason_for_Pending_">
+          <DataField>PIDS1_PIDS1__Reason_for_Pending_</DataField>
+        </Field>
+        <Field Name="PIDS1_No_">
+          <DataField>PIDS1_No_</DataField>
+        </Field>
+        <Field Name="PIDS1Tim1">
+          <DataField>PIDS1Tim1</DataField>
+        </Field>
+        <Field Name="PIDS1Tim2">
+          <DataField>PIDS1Tim2</DataField>
+        </Field>
+        <Field Name="PIDS1_Inspection_Receipt_No_">
+          <DataField>PIDS1_Inspection_Receipt_No_</DataField>
+        </Field>
+        <Field Name="IDS2Body1">
+          <DataField>IDS2Body1</DataField>
+        </Field>
+        <Field Name="IDS1_Quantity">
+          <DataField>IDS1_Quantity</DataField>
+        </Field>
+        <Field Name="IDS1_QuantityFormat">
+          <DataField>IDS1_QuantityFormat</DataField>
+        </Field>
+        <Field Name="IDS1__Unit_Of_Measure_Code_">
+          <DataField>IDS1__Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="IDS1__Item_Description_">
+          <DataField>IDS1__Item_Description_</DataField>
+        </Field>
+        <Field Name="IDS2__Lot_No__">
+          <DataField>IDS2__Lot_No__</DataField>
+        </Field>
+        <Field Name="name_Control1102154139">
+          <DataField>name_Control1102154139</DataField>
+        </Field>
+        <Field Name="day_Control1102154140">
+          <DataField>day_Control1102154140</DataField>
+        </Field>
+        <Field Name="hour_Control1102154141">
+          <DataField>hour_Control1102154141</DataField>
+        </Field>
+        <Field Name="hour_Control1102154141Format">
+          <DataField>hour_Control1102154141Format</DataField>
+        </Field>
+        <Field Name="IDS1__Created_Date_">
+          <DataField>IDS1__Created_Date_</DataField>
+        </Field>
+        <Field Name="no_Control1102154143">
+          <DataField>no_Control1102154143</DataField>
+        </Field>
+        <Field Name="IDS2_No_">
+          <DataField>IDS2_No_</DataField>
+        </Field>
+        <Field Name="Int3Header">
+          <DataField>Int3Header</DataField>
+        </Field>
+        <Field Name="avg3">
+          <DataField>avg3</DataField>
+        </Field>
+        <Field Name="avg3Format">
+          <DataField>avg3Format</DataField>
+        </Field>
+        <Field Name="Average_Days_Caption_Control1102154087">
+          <DataField>Average_Days_Caption_Control1102154087</DataField>
+        </Field>
+        <Field Name="Total2">
+          <DataField>Total2</DataField>
+        </Field>
+        <Field Name="Total2Format">
+          <DataField>Total2Format</DataField>
+        </Field>
+        <Field Name="int3_Number">
+          <DataField>int3_Number</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header___Vendor_Name_">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header___Vendor_Name_</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header___Item_Description_">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header___Item_Description_</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header__Quantity">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header__Quantity</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header__QuantityFormat">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header__QuantityFormat</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header___Created_Date_">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header___Created_Date_</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header__Location">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header__Location</DataField>
+        </Field>
+        <Field Name="no_Control1102154101">
+          <DataField>no_Control1102154101</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header___Unit_Of_Measure_Code_">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header___Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header__Inspection_Datasheet_Header___Reason_for_Pending_">
+          <DataField>Inspection_Datasheet_Header__Inspection_Datasheet_Header___Reason_for_Pending_</DataField>
+        </Field>
+        <Field Name="Pending_ItemsCaption">
+          <DataField>Pending_ItemsCaption</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="Inward_DateCaption_Control1102154094">
+          <DataField>Inward_DateCaption_Control1102154094</DataField>
+        </Field>
+        <Field Name="Item_DescriptionCaption">
+          <DataField>Item_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Vendor_NameCaption">
+          <DataField>Vendor_NameCaption</DataField>
+        </Field>
+        <Field Name="Location_CodeCaption">
+          <DataField>Location_CodeCaption</DataField>
+        </Field>
+        <Field Name="SNO_Caption_Control1102154106">
+          <DataField>SNO_Caption_Control1102154106</DataField>
+        </Field>
+        <Field Name="UOMCaption_Control1102154113">
+          <DataField>UOMCaption_Control1102154113</DataField>
+        </Field>
+        <Field Name="Reason_for_pendingCaption_Control1102154147">
+          <DataField>Reason_for_pendingCaption_Control1102154147</DataField>
+        </Field>
+        <Field Name="IDSSourceType_">
+          <DataField>IDSSourceType_</DataField>
+        </Field>
+        <Field Name="Inspection_Datasheet_Header_No_">
+          <DataField>Inspection_Datasheet_Header_No_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____Vendor_Name_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____Vendor_Name_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____Item_Description_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____Item_Description_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1___Quantity">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1___Quantity</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1___QuantityFormat">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1___QuantityFormat</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____IDS_creation_Date_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____IDS_creation_Date_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____Location_Code_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____Location_Code_</DataField>
+        </Field>
+        <Field Name="no_Control1102154102">
+          <DataField>no_Control1102154102</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____Unit_Of_Measure_Code_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____Unit_Of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1____Inspection_Receipt_Header1____Reason_for_Pending_">
+          <DataField>Inspection_Receipt_Header1____Inspection_Receipt_Header1____Reason_for_Pending_</DataField>
+        </Field>
+        <Field Name="Inspection_Receipt_Header1__No_">
+          <DataField>Inspection_Receipt_Header1__No_</DataField>
+        </Field>
+        <Field Name="IRSourceType_">
+          <DataField>IRSourceType_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

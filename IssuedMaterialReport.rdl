@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TODAY">
+          <DataField>TODAY</DataField>
+        </Field>
+        <Field Name="COMPANYNAME_Control1102154003">
+          <DataField>COMPANYNAME_Control1102154003</DataField>
+        </Field>
+        <Field Name="USERID_Control1102154016">
+          <DataField>USERID_Control1102154016</DataField>
+        </Field>
+        <Field Name="TODAY_Control1102154017">
+          <DataField>TODAY_Control1102154017</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header__Prod__Order_No__">
+          <DataField>Posted_Material_Issues_Header__Prod__Order_No__</DataField>
+        </Field>
+        <Field Name="Project_Desc">
+          <DataField>Project_Desc</DataField>
+        </Field>
+        <Field Name="Project_Total_">
+          <DataField>Project_Total_</DataField>
+        </Field>
+        <Field Name="Project_Total_Format">
+          <DataField>Project_Total_Format</DataField>
+        </Field>
+        <Field Name="R_D_total_">
+          <DataField>R_D_total_</DataField>
+        </Field>
+        <Field Name="R_D_total_Format">
+          <DataField>R_D_total_Format</DataField>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="TotalFormat">
+          <DataField>TotalFormat</DataField>
+        </Field>
+        <Field Name="Total_Qty">
+          <DataField>Total_Qty</DataField>
+        </Field>
+        <Field Name="Total_QtyFormat">
+          <DataField>Total_QtyFormat</DataField>
+        </Field>
+        <Field Name="Material_IssuesCaption">
+          <DataField>Material_IssuesCaption</DataField>
+        </Field>
+        <Field Name="Project_CodeCaption">
+          <DataField>Project_CodeCaption</DataField>
+        </Field>
+        <Field Name="Requisition_NoCaption">
+          <DataField>Requisition_NoCaption</DataField>
+        </Field>
+        <Field Name="Item_Caption">
+          <DataField>Item_Caption</DataField>
+        </Field>
+        <Field Name="UOMCaption">
+          <DataField>UOMCaption</DataField>
+        </Field>
+        <Field Name="Employee_NameCaption">
+          <DataField>Employee_NameCaption</DataField>
+        </Field>
+        <Field Name="Reqested_DateCaption">
+          <DataField>Reqested_DateCaption</DataField>
+        </Field>
+        <Field Name="DeptCaption">
+          <DataField>DeptCaption</DataField>
+        </Field>
+        <Field Name="Quantity_RequestedCaption">
+          <DataField>Quantity_RequestedCaption</DataField>
+        </Field>
+        <Field Name="Quantity_ReceivedCaption">
+          <DataField>Quantity_ReceivedCaption</DataField>
+        </Field>
+        <Field Name="Unit_costCaption">
+          <DataField>Unit_costCaption</DataField>
+        </Field>
+        <Field Name="LOT_No_Caption">
+          <DataField>LOT_No_Caption</DataField>
+        </Field>
+        <Field Name="Serial_No_Caption">
+          <DataField>Serial_No_Caption</DataField>
+        </Field>
+        <Field Name="Bench_MarkCaption">
+          <DataField>Bench_MarkCaption</DataField>
+        </Field>
+        <Field Name="Vendor_NameCaption">
+          <DataField>Vendor_NameCaption</DataField>
+        </Field>
+        <Field Name="Bill_No_Caption">
+          <DataField>Bill_No_Caption</DataField>
+        </Field>
+        <Field Name="Bill_DateCaption">
+          <DataField>Bill_DateCaption</DataField>
+        </Field>
+        <Field Name="Issued_Date_TimeCaption">
+          <DataField>Issued_Date_TimeCaption</DataField>
+        </Field>
+        <Field Name="Material_IssuesCaption_Control1102154002">
+          <DataField>Material_IssuesCaption_Control1102154002</DataField>
+        </Field>
+        <Field Name="Project_CodeCaption_Control1102154004">
+          <DataField>Project_CodeCaption_Control1102154004</DataField>
+        </Field>
+        <Field Name="ValueCaption">
+          <DataField>ValueCaption</DataField>
+        </Field>
+        <Field Name="Project_DescriptionCaption">
+          <DataField>Project_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header_No_">
+          <DataField>Posted_Material_Issues_Header_No_</DataField>
+        </Field>
+        <Field Name="Choice3">
+          <DataField>Choice3</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Reason_Code_">
+          <DataField>Posted_Material_Issues_Header___Reason_Code_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Material_Issue_No__">
+          <DataField>Posted_Material_Issues_Line__Material_Issue_No__</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Unit_of_Measure_">
+          <DataField>Posted_Material_Issues_Line__Unit_of_Measure_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Resource_Name_">
+          <DataField>Posted_Material_Issues_Header___Resource_Name_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Transfer_from_Code_">
+          <DataField>Posted_Material_Issues_Header___Transfer_from_Code_</DataField>
+        </Field>
+        <Field Name="QTY">
+          <DataField>QTY</DataField>
+        </Field>
+        <Field Name="QTYFormat">
+          <DataField>QTYFormat</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__QuantityFormat">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__QuantityFormat</DataField>
+        </Field>
+        <Field Name="UC">
+          <DataField>UC</DataField>
+        </Field>
+        <Field Name="UCFormat">
+          <DataField>UCFormat</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Released_Date_">
+          <DataField>Posted_Material_Issues_Header___Released_Date_</DataField>
+        </Field>
+        <Field Name="Lot">
+          <DataField>Lot</DataField>
+        </Field>
+        <Field Name="Serial_no_">
+          <DataField>Serial_no_</DataField>
+        </Field>
+        <Field Name="Bench_Mark_">
+          <DataField>Bench_Mark_</DataField>
+        </Field>
+        <Field Name="Reason">
+          <DataField>Reason</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Material_Issue_No___Control1000000025">
+          <DataField>Posted_Material_Issues_Line__Material_Issue_No___Control1000000025</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027">
+          <DataField>Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Resource_Name__Control1000000028">
+          <DataField>Posted_Material_Issues_Header___Resource_Name__Control1000000028</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Transfer_to_Code_">
+          <DataField>Posted_Material_Issues_Line__Transfer_to_Code_</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000031">
+          <DataField>QTY_Control1000000031</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000031Format">
+          <DataField>QTY_Control1000000031Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032Format">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032Format</DataField>
+        </Field>
+        <Field Name="UC_Control1000000033">
+          <DataField>UC_Control1000000033</DataField>
+        </Field>
+        <Field Name="UC_Control1000000033Format">
+          <DataField>UC_Control1000000033Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Released_Date__Control1000000036">
+          <DataField>Posted_Material_Issues_Header___Released_Date__Control1000000036</DataField>
+        </Field>
+        <Field Name="Lot_Control1000000041">
+          <DataField>Lot_Control1000000041</DataField>
+        </Field>
+        <Field Name="Serial_no__Control1000000042">
+          <DataField>Serial_no__Control1000000042</DataField>
+        </Field>
+        <Field Name="Bench_Mark__Control1102154010">
+          <DataField>Bench_Mark__Control1102154010</DataField>
+        </Field>
+        <Field Name="Reason_Control1000000054">
+          <DataField>Reason_Control1000000054</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Material_Issue_No___Control1000000055">
+          <DataField>Posted_Material_Issues_Line__Material_Issue_No___Control1000000055</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057">
+          <DataField>Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Resource_Name__Control1000000058">
+          <DataField>Posted_Material_Issues_Header___Resource_Name__Control1000000058</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060">
+          <DataField>Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000061">
+          <DataField>QTY_Control1000000061</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000061Format">
+          <DataField>QTY_Control1000000061Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062Format">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062Format</DataField>
+        </Field>
+        <Field Name="UC_Control1000000063">
+          <DataField>UC_Control1000000063</DataField>
+        </Field>
+        <Field Name="UC_Control1000000063Format">
+          <DataField>UC_Control1000000063Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Released_Date__Control1000000037">
+          <DataField>Posted_Material_Issues_Header___Released_Date__Control1000000037</DataField>
+        </Field>
+        <Field Name="Lot_Control1000000045">
+          <DataField>Lot_Control1000000045</DataField>
+        </Field>
+        <Field Name="Serial_no__Control1000000046">
+          <DataField>Serial_no__Control1000000046</DataField>
+        </Field>
+        <Field Name="Bench_Mark__Control1102154012">
+          <DataField>Bench_Mark__Control1102154012</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Material_Issue_No___Control1000000015">
+          <DataField>Posted_Material_Issues_Line__Material_Issue_No___Control1000000015</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012">
+          <DataField>Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Resource_Name__Control1000000016">
+          <DataField>Posted_Material_Issues_Header___Resource_Name__Control1000000016</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011">
+          <DataField>Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000018">
+          <DataField>QTY_Control1000000018</DataField>
+        </Field>
+        <Field Name="QTY_Control1000000018Format">
+          <DataField>QTY_Control1000000018Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010Format">
+          <DataField>Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010Format</DataField>
+        </Field>
+        <Field Name="UC_Control1000000019">
+          <DataField>UC_Control1000000019</DataField>
+        </Field>
+        <Field Name="UC_Control1000000019Format">
+          <DataField>UC_Control1000000019Format</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Released_Date__Control1000000038">
+          <DataField>Posted_Material_Issues_Header___Released_Date__Control1000000038</DataField>
+        </Field>
+        <Field Name="Lot_Control1000000047">
+          <DataField>Lot_Control1000000047</DataField>
+        </Field>
+        <Field Name="Serial_no__Control1000000048">
+          <DataField>Serial_no__Control1000000048</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Header___Prod__Order_No__">
+          <DataField>Posted_Material_Issues_Header___Prod__Order_No__</DataField>
+        </Field>
+        <Field Name="Bench_Mark__Control1102154015">
+          <DataField>Bench_Mark__Control1102154015</DataField>
+        </Field>
+        <Field Name="vendor">
+          <DataField>vendor</DataField>
+        </Field>
+        <Field Name="BILLNO__">
+          <DataField>BILLNO__</DataField>
+        </Field>
+        <Field Name="BillDate">
+          <DataField>BillDate</DataField>
+        </Field>
+        <Field Name="DaysCaption">
+          <DataField>DaysCaption</DataField>
+        </Field>
+        <Field Name="DaysCaption_Control1102154011">
+          <DataField>DaysCaption_Control1102154011</DataField>
+        </Field>
+        <Field Name="DaysCaption_Control1102154013">
+          <DataField>DaysCaption_Control1102154013</DataField>
+        </Field>
+        <Field Name="DaysCaption_Control1102154018">
+          <DataField>DaysCaption_Control1102154018</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line_Document_No_">
+          <DataField>Posted_Material_Issues_Line_Document_No_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line_Line_No_">
+          <DataField>Posted_Material_Issues_Line_Line_No_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line_Item_No_">
+          <DataField>Posted_Material_Issues_Line_Item_No_</DataField>
+        </Field>
+        <Field Name="Choice1">
+          <DataField>Choice1</DataField>
+        </Field>
+        <Field Name="GrpFVisible1">
+          <DataField>GrpFVisible1</DataField>
+        </Field>
+        <Field Name="GrpFVisible2">
+          <DataField>GrpFVisible2</DataField>
+        </Field>
+        <Field Name="GrpFVisible3">
+          <DataField>GrpFVisible3</DataField>
+        </Field>
+        <Field Name="GrpFVisible4">
+          <DataField>GrpFVisible4</DataField>
+        </Field>
+        <Field Name="GrpFVisible5">
+          <DataField>GrpFVisible5</DataField>
+        </Field>
+        <Field Name="Production_Order_Status">
+          <DataField>Production_Order_Status</DataField>
+        </Field>
+        <Field Name="Production_Order_No_">
+          <DataField>Production_Order_No_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME_Control1102154031">
+          <DataField>COMPANYNAME_Control1102154031</DataField>
+        </Field>
+        <Field Name="USERID_Control1102154035">
+          <DataField>USERID_Control1102154035</DataField>
+        </Field>
+        <Field Name="TODAY_Control1102154036">
+          <DataField>TODAY_Control1102154036</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1___Unit_of_Measure_Code_">
+          <DataField>Posted_Material_Issues_Line1___Unit_of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1___Item_No__">
+          <DataField>Posted_Material_Issues_Line1___Item_No__</DataField>
+        </Field>
+        <Field Name="Ret_Qty">
+          <DataField>Ret_Qty</DataField>
+        </Field>
+        <Field Name="Ret_QtyFormat">
+          <DataField>Ret_QtyFormat</DataField>
+        </Field>
+        <Field Name="Value">
+          <DataField>Value</DataField>
+        </Field>
+        <Field Name="ValueFormat">
+          <DataField>ValueFormat</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__Quantity">
+          <DataField>Posted_Material_Issues_Line1__Quantity</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__QuantityFormat">
+          <DataField>Posted_Material_Issues_Line1__QuantityFormat</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__Description">
+          <DataField>Posted_Material_Issues_Line1__Description</DataField>
+        </Field>
+        <Field Name="Total_Value_">
+          <DataField>Total_Value_</DataField>
+        </Field>
+        <Field Name="Total_Value_Format">
+          <DataField>Total_Value_Format</DataField>
+        </Field>
+        <Field Name="Material_IssuesCaption_Control1102154030">
+          <DataField>Material_IssuesCaption_Control1102154030</DataField>
+        </Field>
+        <Field Name="Item_No_Caption">
+          <DataField>Item_No_Caption</DataField>
+        </Field>
+        <Field Name="ValueCaption_Control1102154033">
+          <DataField>ValueCaption_Control1102154033</DataField>
+        </Field>
+        <Field Name="DescriptionCaption">
+          <DataField>DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Issued_QtyCaption">
+          <DataField>Issued_QtyCaption</DataField>
+        </Field>
+        <Field Name="Return_QtyCaption">
+          <DataField>Return_QtyCaption</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1___Unit_of_Measure_Code_Caption">
+          <DataField>Posted_Material_Issues_Line1___Unit_of_Measure_Code_Caption</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__Document_No_">
+          <DataField>Posted_Material_Issues_Line1__Document_No_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__Line_No_">
+          <DataField>Posted_Material_Issues_Line1__Line_No_</DataField>
+        </Field>
+        <Field Name="Posted_Material_Issues_Line1__Prod__Order_No_">
+          <DataField>Posted_Material_Issues_Line1__Prod__Order_No_</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report__Sales_Order_No__">
+          <DataField>Str_Rdso_report__Sales_Order_No__</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report__Production_Order_">
+          <DataField>Str_Rdso_report__Production_Order_</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report__Str_Rdso_report__Description">
+          <DataField>Str_Rdso_report__Str_Rdso_report__Description</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report__Issued_Qty_">
+          <DataField>Str_Rdso_report__Issued_Qty_</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report__Issued_Qty_Format">
+          <DataField>Str_Rdso_report__Issued_Qty_Format</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report_Lot">
+          <DataField>Str_Rdso_report_Lot</DataField>
+        </Field>
+        <Field Name="PO1">
+          <DataField>PO1</DataField>
+        </Field>
+        <Field Name="CONSUMPTION_SUMMARYCaption">
+          <DataField>CONSUMPTION_SUMMARYCaption</DataField>
+        </Field>
+        <Field Name="Sales_Order_NoCaption">
+          <DataField>Sales_Order_NoCaption</DataField>
+        </Field>
+        <Field Name="Production_OrdersCaption">
+          <DataField>Production_OrdersCaption</DataField>
+        </Field>
+        <Field Name="ItemCaption">
+          <DataField>ItemCaption</DataField>
+        </Field>
+        <Field Name="Issued_QtyCaption_Control1000000052">
+          <DataField>Issued_QtyCaption_Control1000000052</DataField>
+        </Field>
+        <Field Name="LOTCaption">
+          <DataField>LOTCaption</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption">
+          <DataField>EmptyStringCaption</DataField>
+        </Field>
+        <Field Name="Str_Rdso_report_Issue_No_">
+          <DataField>Str_Rdso_report_Issue_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
